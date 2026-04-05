@@ -1,0 +1,308 @@
+/* ═══════════════════════════════════════════════════════════════════
+   RAW DISK VIEWER CPLX — dark-theme.css
+   FTK-inspired dark colour palette
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Root defaults ─────────────────────────────────────────────── */
+.root {
+    -fx-base:                    #1A1A1A;
+    -fx-background:              #1F1F1F;
+    -fx-control-inner-background:#252525;
+    -fx-accent:                  #3A6EA5;
+    -fx-focus-color:             #5E9FD8;
+    -fx-faint-focus-color:       #5E9FD820;
+    -fx-text-fill:               #C0C0C0;
+    -fx-font-family:             "Segoe UI", "DejaVu Sans", sans-serif;
+    -fx-font-size:               13px;
+}
+
+/* ── Window / scene background ─────────────────────────────────── */
+.scene, .border-pane, .stack-pane {
+    -fx-background-color: #1A1A1A;
+}
+
+/* ── Labels ────────────────────────────────────────────────────── */
+.label {
+    -fx-text-fill: #C0C0C0;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.button {
+    -fx-background-color: #2D2D2D, #333333;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    -fx-border-color: #505050;
+    -fx-border-radius: 3;
+    -fx-text-fill: #C8C8C8;
+    -fx-font-size: 12px;
+    -fx-padding: 4 12 4 12;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #3C3C3C, #444444;
+    -fx-text-fill: #E8E8E8;
+    -fx-border-color: #666666;
+}
+.button:pressed {
+    -fx-background-color: #1E3A5C, #204870;
+    -fx-text-fill: #80C8FF;
+    -fx-border-color: #2A5A8C;
+}
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+/* ── Text inputs ────────────────────────────────────────────────── */
+.text-field, .text-area {
+    -fx-background-color: #1A1A1A;
+    -fx-text-fill: #D4D4D4;
+    -fx-border-color: #404040;
+    -fx-border-radius: 3;
+    -fx-prompt-text-fill: #505050;
+}
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #5E9FD8;
+    -fx-effect: dropshadow(gaussian, #5E9FD840, 4, 0.3, 0, 0);
+}
+
+/* ── ListView ───────────────────────────────────────────────────── */
+.list-view {
+    -fx-background-color: #1E1E1E;
+    -fx-border-color: #333333;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C0C0C0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+.list-view .list-cell:hover {
+    -fx-background-color: #2A2A2A;
+}
+.list-view .list-cell:selected,
+.list-view .list-cell:selected:focused {
+    -fx-background-color: #1A3A5C;
+    -fx-text-fill: #80C8FF;
+}
+
+/* ── TreeView ───────────────────────────────────────────────────── */
+.tree-view {
+    -fx-background-color: #1C1C1C;
+    -fx-border-color: transparent;
+}
+.tree-view .tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #B8B8B8;
+    -fx-padding: 2 4;
+}
+.tree-view .tree-cell:hover {
+    -fx-background-color: #2A2A2A;
+}
+.tree-view .tree-cell:selected,
+.tree-view .tree-cell:selected:focused {
+    -fx-background-color: #1A3A5C;
+    -fx-text-fill: #80C8FF;
+}
+
+/* ── TabPane ────────────────────────────────────────────────────── */
+.tab-pane > .tab-header-area {
+    -fx-background-color: #222222;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+.tab-pane .tab {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #909090;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-padding: 6 16 6 16;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #D0D0D0;
+}
+.tab-pane .tab:hover {
+    -fx-background-color: #333333;
+}
+.tab-pane > .tab-content-area {
+    -fx-background-color: #1E1E1E;
+}
+
+/* ── ScrollBar ──────────────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #181818;
+    -fx-opacity: 0.9;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #484848;
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #606060;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #222222;
+    -fx-padding: 4;
+}
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #666666;
+}
+
+/* ── ScrollPane ─────────────────────────────────────────────────── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ── TitledPane ─────────────────────────────────────────────────── */
+.titled-pane {
+    -fx-text-fill: #909090;
+    -fx-border-color: #333333;
+}
+.titled-pane > .title {
+    -fx-background-color: #222222;
+    -fx-padding: 6 10;
+}
+.titled-pane > .title > .text {
+    -fx-fill: #909090;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+.titled-pane > .content {
+    -fx-background-color: #1C1C1C;
+    -fx-border-color: #333;
+    -fx-border-width: 0 1 1 1;
+}
+
+/* ── Separator ──────────────────────────────────────────────────── */
+.separator .line {
+    -fx-background-color: #333333;
+    -fx-border-color: #333333;
+}
+
+/* ── ProgressBar ────────────────────────────────────────────────── */
+.progress-bar {
+    -fx-background-color: #1A1A1A;
+    -fx-background-radius: 4;
+    -fx-border-color: #404040;
+    -fx-border-radius: 4;
+}
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #1A4070, #5E9FD8);
+    -fx-background-radius: 4;
+    -fx-padding: 6;
+}
+.progress-bar .track {
+    -fx-background-color: #282828;
+    -fx-background-radius: 4;
+}
+
+/* ── MenuBar ────────────────────────────────────────────────────── */
+.menu-bar {
+    -fx-background-color: #252525;
+    -fx-border-color: #333;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 2 0;
+}
+.menu-bar .menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C0C0C0;
+    -fx-padding: 4 12;
+}
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: #333333;
+    -fx-text-fill: #E0E0E0;
+}
+
+/* ── Context menus / drop-down menus ────────────────────────────── */
+.context-menu {
+    -fx-background-color: #252525;
+    -fx-border-color: #404040;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, #00000088, 12, 0.3, 0, 4);
+}
+.context-menu .menu-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C0C0C0;
+    -fx-padding: 5 14;
+}
+.context-menu .menu-item:focused,
+.context-menu .menu-item:hover {
+    -fx-background-color: #1A3A5C;
+    -fx-text-fill: #80C8FF;
+}
+.context-menu .separator .line {
+    -fx-border-color: #383838;
+}
+
+/* ── SplitPane ──────────────────────────────────────────────────── */
+.split-pane {
+    -fx-background-color: #1A1A1A;
+    -fx-padding: 0;
+}
+.split-pane-divider {
+    -fx-background-color: #333333;
+    -fx-padding: 0 1;
+}
+
+/* ── Slider (sector position) ───────────────────────────────────── */
+.slider .thumb {
+    -fx-background-color: #5E9FD8;
+    -fx-background-radius: 50%;
+}
+.slider .track {
+    -fx-background-color: #333333;
+}
+
+/* ── Dialog pane ────────────────────────────────────────────────── */
+.dialog-pane {
+    -fx-background-color: #1C1C1C;
+    -fx-border-color: #404040;
+}
+.dialog-pane .header-panel {
+    -fx-background-color: #222222;
+}
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #CCCCCC;
+    -fx-font-size: 14px;
+}
+.dialog-pane .button-bar {
+    -fx-background-color: #222222;
+    -fx-border-color: #333;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 8 14;
+}
+
+/* ── RadioButton / CheckBox ─────────────────────────────────────── */
+.radio-button, .check-box {
+    -fx-text-fill: #C0C0C0;
+}
+.radio-button .radio,
+.check-box .box {
+    -fx-background-color: #2A2A2A;
+    -fx-border-color: #555;
+    -fx-border-radius: 50%;
+}
+.radio-button:selected .dot {
+    -fx-background-color: #5E9FD8;
+    -fx-background-radius: 50%;
+}
+.check-box:selected .mark {
+    -fx-background-color: #5E9FD8;
+}
+
+/* ── Tooltip ────────────────────────────────────────────────────── */
+.tooltip {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #D0D0D0;
+    -fx-border-color: #505050;
+    -fx-font-size: 11px;
+}

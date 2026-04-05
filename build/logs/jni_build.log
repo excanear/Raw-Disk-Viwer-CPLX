@@ -1,0 +1,14 @@
+[RDVC] Building JNI Bridge (Windows x64)...
+jni\src\bridge_disk.c:15:10: fatal error: jni.h: No such file or directory
+   15 | #include <jni.h>
+      |          ^~~~~~~
+compilation terminated.
+jni\src\bridge_partition.c:10:10: fatal error: jni.h: No such file or directory
+   10 | #include <jni.h>
+      |          ^~~~~~~
+compilation terminated.
+jni\src\bridge_scanner.c:13:10: fatal error: jni.h: No such file or directory
+   13 | #include <jni.h>
+      |          ^~~~~~~
+compilation terminated.
+[ERROR] JNI bridge build failed.
