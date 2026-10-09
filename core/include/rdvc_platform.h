@@ -57,23 +57,20 @@
 /* ─────────────────────────────────────────────────────────────
  *  Struct packing macros
  * ───────────────────────────────────────────────────────────── */
-#if defined(RDVC_OS_WINDOWS)
-    /* On Windows, MSVC supports __pragma(pack), but GCC/Clang (MinGW)
-     * should use the __attribute__((packed)) form. Detect MSVC specifically.
-     */
-    #if defined(_MSC_VER)
-        #define RDVC_PACKED_BEGIN  __pragma(pack(push, 1))
-        #define RDVC_PACKED_END    __pragma(pack(pop))
-        #define RDVC_PACKED_ATTR
-    #else
-        #define RDVC_PACKED_BEGIN
-        #define RDVC_PACKED_END
-        #define RDVC_PACKED_ATTR   __attribute__((packed))
-    #endif
+/* Usa pragma pack em todos os compiladores suportados. A forma
+ * __attribute__((packed)) colocada APÓS o nome do typedef
+ * (`} nome RDVC_PACKED_ATTR;`) é IGNORADA pelo GCC/Clang — deixando as
+ * structs de disco (MBR/GPT) sem empacotamento e quebrando o parsing dos
+ * setores no build MinGW/Linux. pack(push,1)/pack(pop) garante o layout
+ * byte-exato em MSVC, GCC, Clang e MinGW. */
+#if defined(_MSC_VER)
+    #define RDVC_PACKED_BEGIN  __pragma(pack(push, 1))
+    #define RDVC_PACKED_END    __pragma(pack(pop))
+    #define RDVC_PACKED_ATTR
 #else
-    #define RDVC_PACKED_BEGIN
-    #define RDVC_PACKED_END
-    #define RDVC_PACKED_ATTR   __attribute__((packed))
+    #define RDVC_PACKED_BEGIN  _Pragma("pack(push, 1)")
+    #define RDVC_PACKED_END    _Pragma("pack(pop)")
+    #define RDVC_PACKED_ATTR
 #endif
 
 /* ─────────────────────────────────────────────────────────────
